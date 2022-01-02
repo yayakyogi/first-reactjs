@@ -4,7 +4,12 @@ function App() {
   return (
     <div className="parent-box">
       <Foto />
-      <Description category="SNEAKER" name="Sepatu Gaul" price="150.000" />
+      <Description
+        category="SNEAKER"
+        name="Sepatu Gaul"
+        price="150.000"
+        isDiskon={false}
+      />
     </div>
   );
 }
@@ -21,12 +26,13 @@ function Foto() {
 }
 
 function Description(props) {
-  const { category, name, price } = props;
+  const { category, name, price, isDiskon, total_diskon } = props;
   return (
     <div className="description">
       <p className="cate">{category}</p>
       <h1 className="title">{name}</h1>
       <p className="price">IDR {price}</p>
+      <p>{isDiskon ? `Diskon ${total_diskon} %` : null}</p>
       <p className="info">
         Lorem Ipsum is simply dummy text of the printing and typesetting
         industry. Lorem Ipsum has been the industry's standard dummy text ever
