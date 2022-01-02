@@ -33,7 +33,14 @@ function Description(props) {
         since the 1500s, when an unknown printer took a galley of type and
         scrambled it to make a type specimen book. It has
       </p>
+      <a onClick={(e) => Buy(name, e)} href="##">
+        Add to chart
+      </a>
     </div>
   );
+}
+
+function Buy(e) {
+  return console.log(`Beli item ${e}`);
 }
 export default App;
