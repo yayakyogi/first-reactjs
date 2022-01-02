@@ -27,6 +27,15 @@ function Foto() {
 
 function Description(props) {
   const { category, name, price, isDiskon, total_diskon } = props;
+  const benefits = [
+    "Produk tahan lama",
+    "Cocok dipakai dimanapun",
+    "Nyaman dipakai",
+  ];
+  const listBenefits = benefits.map((items, key) => {
+    return <li key={key}>{items}</li>;
+  });
+
   return (
     <div className="description">
       <p className="cate">{category}</p>
@@ -39,6 +48,7 @@ function Description(props) {
         since the 1500s, when an unknown printer took a galley of type and
         scrambled it to make a type specimen book. It has
       </p>
+      <ul>{listBenefits}</ul>
       <a onClick={(e) => Buy(name, e)} href="##">
         Add to chart
       </a>
