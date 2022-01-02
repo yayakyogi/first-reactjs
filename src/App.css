@@ -9,7 +9,7 @@
 }
 
 .foto {
-  width: 25%;
+  width: 30%;
   overflow: hidden;
 }
 
@@ -24,7 +24,7 @@
 }
 
 .description .info {
-  line-height: 1.8;
+  line-height: 1.5;
   color: rgb(18, 11, 49);
 }
 
