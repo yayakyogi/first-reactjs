@@ -95,3 +95,32 @@
 .review p {
   font-size: 20px;
 }
+
+.fetch-api {
+  width: 80%;
+  margin: 50px auto 100px;
+}
+
+.fetch-api .wrap {
+  width: 50%;
+}
+
+.fetch-api .card {
+  background-color: yellowgreen;
+  border-radius: 10px;
+  list-style-type: none;
+  -webkit-box-shadow: 0px 0px 43px -9px rgba(117, 117, 117, 1);
+  -moz-box-shadow: 0px 0px 43px -9px rgba(117, 117, 117, 1);
+  box-shadow: 0px 0px 43px -9px rgba(117, 117, 117, 1);
+  padding: 10px 20px;
+  margin-bottom: 30px;
+  display: flex;
+}
+
+.fetch-api .wrap .profile {
+  width: 50%;
+}
+
+.fetch-api .wrap .address {
+  margin-left: 20px;
+}
