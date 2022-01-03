@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { Component, useState, useEffect } from "react";
 
 // * CLASS COMPPONENT
@@ -80,25 +81,25 @@ export default function FetchApiHooks() {
   const [isLoaded, setIsLoaded] = useState(false);
   const [items, setItems] = useState([]);
 
+  // * CALL API USING ASYNC FUNCTION & AXIOS
+  const loadUser = async () => {
+    const res = await axios.get("https://jsonplaceholder.typicode.com/users");
+    if (res.status === 200) {
+      setItems(res.data);
+      setIsLoaded(true);
+    } else {
+      setError(`Ada Error ${res.statusText}`);
+    }
+  };
   useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/users")
-      .then((res) => res.json())
-      .then(
-        (result) => {
-          setIsLoaded(true);
-          setItems(result);
-        },
-        (error) => {
-          setIsLoaded(true);
-          setError(error);
-        }
-      );
+    // * Call async function
+    loadUser();
   }, []);
 
   if (error) {
     return (
       <div>
-        <h1>Error: {error.message}</h1>
+        <h1>Error: {error}</h1>
       </div>
     );
   } else if (!isLoaded) {
