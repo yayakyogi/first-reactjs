@@ -1,8 +1,8 @@
-import "./App.css";
-import FetchApi from "./FetchApi";
+import "./MiniBlog.css";
+import MiniBlog from "./MiniBlog";
 
 function App() {
-  return <FetchApi />;
+  return <MiniBlog />;
 }
 
 export default App;
