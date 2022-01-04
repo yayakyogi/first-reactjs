@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import BlogList from "./BlogList";
 
 export default function Content() {
   const [blogs, setBlogs] = useState([
@@ -17,22 +18,20 @@ export default function Content() {
     },
   ]);
 
-  const listPost = blogs.map((blog) => {
-    return (
-      <div
-        style={{
-          width: "75%",
-          background: "lightgreen",
-          borderRadius: 10,
-          padding: 10,
-          marginBottom: 10,
-        }}
-        key={blog.id}
-      >
-        <h1>{blog.title}</h1>
-        <p>{blog.body}</p>
-      </div>
-    );
-  });
-  return <div className="content">{listPost}</div>;
+  const handleDelete = (id) => {
+    const newBlog = blogs.filter((blog) => blog.id !== id);
+    setBlogs(newBlog);
+  };
+
+  useEffect(() => {
+    if (blogs.length < 3) {
+      console.log("Sukses menghapus blog");
+    }
+  }, [blogs]);
+
+  return (
+    <div className="content">
+      <BlogList blogs={blogs} title="All Blogs" handleDelete={handleDelete} />
+    </div>
+  );
 }
